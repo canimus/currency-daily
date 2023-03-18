@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "currency-daily"
+version = "0.0.1"
+authors = [
+  { name="Herminio Vazquez", email="canimus@gmail.com"}
+]
+description = "Dagster project to download currency prices."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "dagster==1.2.2",
+    "dagit==1.2.2",
+    "dagster-aws==0.18.2",
+    "pandas==1.5.2",
+    "hirlite==0.3.1"
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/canimus/cuallee"
+"Bug Tracker" = "https://github.com/canimus/cuallee"

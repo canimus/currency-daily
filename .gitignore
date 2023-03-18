@@ -1,0 +1,24 @@
+# Environments
+.venv/
+
+# Cache
+**__pycache__/
+
+# Security
+*.crt
+*.key
+.devcontainer/
+
+# Development
+temp/
+.vscode/
+.env
+
+# Build
+dist/
+build/
+data/
+
+# Testing
+.coverage
+app/

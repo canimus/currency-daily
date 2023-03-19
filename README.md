@@ -9,8 +9,20 @@ Simple project that uses the Fixer API to download currency prices on a daily ba
 # Install dependencies: pip install dagster dagit hirlite toolz
 pip install '.[dev]'
 
+# memory storage dir
+mkdir -p data/mem
+
+# Pipeline storage dir
+mkdir dg
+
+# Create store
+ipython
+import hirlite
+hirlite.Rlite("data/mem/USD.rlite")
+
+
 # Run user interface. if using codespaces, a popup will apear to forwarded port 3000
-dagit -m src
+DAGSTER_HOME=/workspaces/currency-daily dagster dev -m src
 ```
 
 ## Explanation

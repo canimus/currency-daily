@@ -1,5 +1,5 @@
 from dagster import asset, Definitions, Field, AssetObservation
-from resources import fixer_api, mem_store
+from .resources import fixer_api, mem_store
 from datetime import datetime
 from functools import partial
 from operator import methodcaller

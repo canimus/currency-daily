@@ -27,5 +27,5 @@ dependencies = [
 
 
 [project.urls]
-"Homepage" = "https://github.com/canimus/cuallee"
-"Bug Tracker" = "https://github.com/canimus/cuallee"
+"Homepage" = "https://github.com/canimus/currency-daily"
+"Bug Tracker" = "https://github.com/canimus/currency-daily"

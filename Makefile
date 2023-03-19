@@ -2,6 +2,7 @@ clean: # Remove workspace files
 	@find . -name "__pycache__" -exec rm -rf {} + 
 	@rm -rf ./.pytest_cache
 	@rm -rf ./htmlcov
+	@rm -rf src/*egg-info
 	@rm -rf dist/
 	@rm -rf build/
 	@rm -rf __blobstorage__

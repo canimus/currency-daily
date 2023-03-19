@@ -59,14 +59,3 @@ def download_currencies(context):
     return payload
     
 
-defs = Definitions(
-    assets=[download_currencies],
-    resources={
-        "fixer_api" : fixer_api.configured(
-            {
-                "token" : {"env" : "FIXER_API_TOKEN"}
-            }
-        ),
-        "mem_store" : mem_store
-    }
-) 

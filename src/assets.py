@@ -1,4 +1,4 @@
-from dagster import asset, Definitions, Field, AssetObservation
+from dagster import asset, Definitions, Field, AssetObservation, DailyPartitionsDefinition
 from .resources import fixer_api, mem_store
 from datetime import datetime
 from functools import partial
@@ -13,12 +13,16 @@ from itertools import chain
     },
     group_name="fx",
     compute_kind="python",
-    required_resource_keys={"fixer_api", "mem_store"}
+    required_resource_keys={"fixer_api", "mem_store"},
+    partitions_def=DailyPartitionsDefinition(start_date="2023-01-01")
 )
 def download_currencies(context):
 
     # Verify if exist in memstore for today
-    today = datetime.today().strftime("%Y-%m-%d")
+    # today = datetime.today().strftime("%Y-%m-%d")
+
+    today = context.asset_partition_key_for_output()
+    context.log.info(f"PARTITION: {today}")
 
     # Functor for mem-store on today
     _mem = partial(context.resources.mem_store.get, today)

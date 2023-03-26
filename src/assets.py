@@ -14,7 +14,7 @@ from itertools import chain
     group_name="fx",
     compute_kind="python",
     required_resource_keys={"fixer_api", "mem_store"},
-    partitions_def=DailyPartitionsDefinition(start_date="2023-01-01")
+    partitions_def=DailyPartitionsDefinition(start_date="2022-12-01")
 )
 def download_currencies(context):
 
